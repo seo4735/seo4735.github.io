@@ -1,7 +1,7 @@
 body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
-    color: #818181;
+    color: #303030;
 }
 h2 {
     font-size: 24px;
@@ -18,7 +18,7 @@ h4 {
     margin-bottom: 30px;
 }
 .jumbotron {
-    background-color: #2b332d;
+    background-color: #49544c;
     color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
@@ -32,7 +32,7 @@ h4 {
     padding: 60px 50px;
 }
 .bg-grey {
-    background-color: #f6f6f6;
+    background-color: #d6dcd6;
 }
 .logo-small {
     color: #303030;
@@ -57,10 +57,16 @@ h4 {
     color: #303030;
 }
 .carousel-indicators li {
-    border-color: #303030;
+    border-color: #49544c;
 }
 .carousel-indicators li.active {
-    background-color: #303030;
+    background-color: #49544c;
+}
+.carousel-indicators .active {
+    width: 8px !important;    /* 활성화된 것은 살짝 더 크게 설정 가능 */
+    height: 8px !important;
+    margin: 1px !important;   /* 크기가 커진 만큼 간격을 미세하게 조정 */
+    background-color: #49544c;
 }
 .item h4 {
     font-size: 19px;
@@ -81,13 +87,13 @@ h4 {
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 }
 .panel-footer .btn:hover {
-    border: 1px solid #303030;
+    border: 1px solid #49544c;
     background-color: #fff !important;
-    color: #303030;
+    color: #49544c;
 }
 .panel-heading {
     color: #fff !important;
-    background-color: #303030 !important;
+    background-color: #49544c !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -107,12 +113,51 @@ h4 {
 }
 .panel-footer .btn {
     margin: 15px 0;
-    background-color: #303030;
+    background-color: #49544c;
     color: #fff;
 }
+.panel-body {
+    min-height: 100px; /* 텍스트 양에 상관없이 최소 100px 확보 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 텍스트가 적어도 세로 중앙에 오게 함 */
+}
+.panel {
+    height: 100%; /* 부모 컬럼 높이에 맞춤 */
+}
+/* Blog Link 섹션의 행(row)을 찾아서 적용 */
+#pricing .row.slideanim {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 내부 컬럼들이 동일한 높이를 갖도록 설정 */
+#pricing .col-sm-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 패널 자체가 부모 컬럼의 높이를 100% 채우도록 강제 */
+#pricing .panel {
+    flex: 1; /* 남는 공간을 모두 채움 */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* 카드 사이 간격 유지 */
+}
+
+/* 패널 내부의 body 영역이 늘어나도록 설정 */
+#pricing .panel-body {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
 .navbar {
     margin-bottom: 0;
-    background-color: #303030;
+    background-color: #49544c;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
